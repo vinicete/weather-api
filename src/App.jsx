@@ -1,13 +1,13 @@
 import React, {useState} from "react"
 import Card from "./components/Card/Card"
 import fetchData from "./services/api"
-
+import initialData from "./helpers/initialData"
 
 
 function App() {
 
   const [city, setCity] = useState('')
-  const [data, setData] = useState({})
+  const [data, setData] = useState(initialData)
   
   const handleSubmit = (e) =>{
     e.preventDefault()
@@ -17,7 +17,7 @@ function App() {
   }
 
   return (
-    <div className="flex w-full h-screen justify-center items-center flex-col gap-4"> 
+    <div className="flex w-full h-screen justify-center items-center flex-col gap-4 "> 
       
       <form onSubmit={handleSubmit} className="flex flex-row gap-2"> 
         <input
@@ -39,3 +39,4 @@ function App() {
 }
 
 export default App
+
